@@ -15,7 +15,10 @@ type TimeDisplayProps = {
   locale?: string; // Optionally allow locale, defaulting to 'en-GB'
 };
 
-const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
+const TimeDisplay: React.FC<TimeDisplayProps> = ({
+  timeZone,
+  locale = "en-GB",
+}) => {
   const [currentTime, setCurrentTime] = useState("");
 
   useEffect(() => {
@@ -26,7 +29,7 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" })
         hour: "2-digit",
         minute: "2-digit",
         second: "2-digit",
-        hour12: false,
+        hour12: true,
       };
       const timeString = new Intl.DateTimeFormat(locale, options).format(now);
       setCurrentTime(timeString);
@@ -49,7 +52,15 @@ export const Header = () => {
   return (
     <>
       <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
-      <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
+      <Fade
+        show="s"
+        fillWidth
+        position="fixed"
+        bottom="0"
+        to="top"
+        height="80"
+        zIndex={9}
+      />
       <Flex
         fitHeight
         position="unset"
@@ -61,24 +72,31 @@ export const Header = () => {
         horizontal="center"
         data-border="rounded"
       >
-        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Flex hide="s">{person.location}</Flex>}
-        </Flex>
+        <Flex
+          paddingLeft="12"
+          fillWidth
+          vertical="center"
+          textVariant="body-default-s"
+        ></Flex>
         <Flex fillWidth horizontal="center">
           <Flex
             background="surface"
             border="neutral-alpha-medium"
             radius="m-4"
             shadow="l"
-            padding="4"
+            padding="8"
             horizontal="center"
             zIndex={1}
           >
-            <Flex gap="4" vertical="center" textVariant="body-default-s">
+            <Flex gap="8" vertical="center" textVariant="body-default-xl">
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton
+                  prefixIcon="home"
+                  href="/"
+                  selected={pathname === "/"}
+                />
               )}
-              <Line background="neutral-alpha-medium" vert maxHeight="24" />
+              <Line background="neutral-alpha-medium" vert maxHeight="32" />
               {routes["/about"] && (
                 <>
                   <ToggleButton
@@ -164,7 +182,25 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
-            <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
+            {display.location && (
+              <Flex hide="s">
+                Canada
+                <img
+                  src="/images/ca.png"
+                  alt="canada Flag"
+                  width={20}
+                  height={10}
+                  style={{
+                    display: "inline-block",
+                    verticalAlign: "middle",
+                    margin: "4px",
+                  }}
+                />
+              </Flex>
+            )}
+            <Flex hide="s">
+              {display.time && <TimeDisplay timeZone={person.location} />}
+            </Flex>
           </Flex>
         </Flex>
       </Flex>
