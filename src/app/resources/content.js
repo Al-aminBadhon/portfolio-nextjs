@@ -7,7 +7,7 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Full-Stack Software Engineer",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/dp-1.jpeg",
   email: "example@gmail.com",
   location: "America/Toronto", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English"], // optional: Leave the array empty if you don't want to display languages
@@ -83,16 +83,14 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com/alamin-badhon",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Badhon is a Canada-based Software developer with 5+ years of hands-on experience in full-stack development, he is specialized in building scalable backend systems and enterprise-grade solutions using .NET Core, Java, and React.js. Successfully delivered 10+ high-performance backend systems and 3 enterprise management platforms, serving organizations ranging from fast-growing startups to multinational corporations (6–5,000+ employees).
       </>
     ),
   },
@@ -101,31 +99,87 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
+        company: "RAnLab - Research Analytic Lab",
+        timeframe: "Aug 2024 - Apr 2025",
         role: "Senior Design Engineer",
+        location: "St. John's, NL",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Optimized UI speed by 25% using Tailwind and JS and cut data retrieval by 15% while developing
+PHP/Laravel for a 100+ client portal, ensuring secure data handling and scalable architecture.
+
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Helped migration from Google Cloud to AWS (EC2/S3) with zero downtime, using Docker/auto-scaling
+(20% cost savings) and CI/CD for efficient deployments.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
       {
-        company: "Creativ3",
+        company: "Marine Learning System",
+        timeframe: "Dec 2023 - Jan 2024",
+        role: "- Software Developer",
+        location: "Vancouver, BC",
+        achievements: [
+          <>
+           Resolved 10+ critical bugs across 2 modules, improving system stability and user satisfaction by 20%
+          </>,
+          <>
+            Partnered with cross-functional teams to integrate Windows Services for background task automation,
+reducing manual intervention.
+
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Banglalink Digital",
+        timeframe: " May 2023 - Aug 2023",
+        role: ".NET Developer",
+        achievements: [
+          <>
+            Built 3 enterprise modules using .NET Core MVC, nopCommerce, and Clean Architecture, reducing
+manual processes by 40% across international offices. Mentored junior developers in advanced .NET
+patterns while implementing robust domain-driven design principles
+          </>,
+          <>
+            Engineered CI/CD pipelines for automated deployments to Azure App Services, optimizing release cycles.
+Containerized applications using Docker and implemented blue-green deployment strategies to ensure
+zero-downtime updates in production environments.
+
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Leads Corporation",
+        timeframe: "Jul 2022 - Apr 2023",
+        role: "Full-Stack Software Engineer",
+        location: "Dhaka, Bangladesh",
+        achievements: [
+          <>
+            Developed CashVault and Banking Instrument modules using ASP.NET Core Web API, handling 50,000+
+monthly transactions for Southeast Asian banks.
+          </>,
+          <>
+           Led 6 developers using Azure DevOps (Boards, Repos, Pipelines) to achieve 100% on-time delivery for 4
+releases. Improved code quality by 30% via CI/CD automation (unit testing), implemented JWT/Oracle
+for security/scalability, and streamlined Scrum workflows
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Marine Learning System",
         timeframe: "2018 - 2022",
         role: "Lead Designer",
         achievements: [
@@ -147,13 +201,9 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
-      },
+        name: "Memorial University of Newfoundland",
+        description: <>MASc in Software Engineering</>,
+      }      
     ],
   },
   technical: {

@@ -52,7 +52,7 @@ export default function About() {
   ];
   return (
     <Column maxWidth="m">
-      <Schema
+      {/* <Schema
         as="webPage"
         baseURL={baseURL}
         title={about.title}
@@ -64,8 +64,8 @@ export default function About() {
           url: `${baseURL}${about.path}`,
           image: `${baseURL}${person.avatar}`,
         }}
-      />
-      {about.tableOfContent.display && (
+      /> */}
+      {/* {about.tableOfContent.display && (
         <Column
           left="0"
           style={{ top: "50%", transform: "translateY(-50%)" }}
@@ -76,43 +76,89 @@ export default function About() {
         >
           <TableOfContents structure={structure} about={about} />
         </Column>
-      )}
+      )} */}
       <Flex fillWidth mobileDirection="column" horizontal="center">
         {about.avatar.display && (
           <Column
             className={styles.avatar}
             position="sticky"
             minWidth="160"
-            paddingX="l"
+            paddingX="xs"
             paddingBottom="xl"
-            gap="m"
-            flex={3}
+            gap="xs"
+            flex={6}
             horizontal="center"
           >
             <Avatar src={person.avatar} size="xl" />
-            <Flex gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {/* {person.location} */}
-              Canada
-            </Flex>
-            {person.languages.length > 0 && (
-              <Flex wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={language} size="l">
-                    {language}
-                  </Tag>
-                ))}
+            <Heading className={styles.textAlign} variant="display-strong-xs">
+              {person.name}
+            </Heading>
+            <Text
+              className={styles.textAlign}
+              variant="code-default-l"
+              onBackground="neutral-weak"
+            >
+              {person.role}
+            </Text>
+            {social.length > 0 && (
+              <Flex
+                className={styles.blockAlign}
+                paddingTop="20"
+                paddingBottom="8"
+                gap="8"
+                wrap
+                horizontal="center"
+                fitWidth
+                data-border="rounded"
+              >
+                {social.map(
+                  (item) =>
+                    item.link && (
+                      <React.Fragment key={item.name}>
+                        <Button
+                          className="s-flex-hide"
+                          key={item.name}
+                          href={item.link}
+                          prefixIcon={item.icon}
+                          label={item.name}
+                          size="s"
+                          variant="secondary"
+                        />
+                        <IconButton
+                          className="s-flex-show"
+                          size="l"
+                          key={`${item.name}-icon`}
+                          href={item.link}
+                          icon={item.icon}
+                          variant="secondary"
+                        />
+                      </React.Fragment>
+                    )
+                )}
               </Flex>
             )}
+            <Flex gap="8" vertical="center">
+              <Icon onBackground="accent-strong" name="globe" />
+              Canada
+              {/* {person.languages.length > 0 && (
+                <Flex wrap gap="8">
+                  {person.languages.map((language, index) => (
+                    <Tag key={language} size="l">
+                      {language}
+                    </Tag>
+                  ))}
+                </Flex>
+              )} */}
+            </Flex>
           </Column>
         )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           <Column
             id={about.intro.title}
             fillWidth
-            minHeight="160"
+            minHeight="20"
             vertical="center"
-            marginBottom="32"
+            marginBottom="0"
           >
             {about.calendar.display && (
               <Flex
@@ -143,7 +189,7 @@ export default function About() {
                 />
               </Flex>
             )}
-            <Heading className={styles.textAlign} variant="display-strong-l">
+            {/* <Heading className={styles.textAlign} variant="display-strong-l">
               {person.name}
             </Heading>
             <Text
@@ -189,7 +235,7 @@ export default function About() {
                     )
                 )}
               </Flex>
-            )}
+            )} */}
           </Column>
 
           {about.intro.display && (
@@ -197,7 +243,8 @@ export default function About() {
               textVariant="body-default-l"
               fillWidth
               gap="m"
-              marginBottom="xl"
+              marginBottom="l"
+              style={{ textAlign: "justify" }}
             >
               {about.intro.description}
             </Column>
@@ -208,12 +255,12 @@ export default function About() {
               <Heading
                 as="h2"
                 id={about.work.title}
-                variant="display-strong-s"
-                marginBottom="m"
+                variant="display-strong-xs"
+                marginBottom="xs"
               >
                 {about.work.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+              <Column fillWidth gap="l" marginBottom="20">
                 {about.work.experiences.map((experience, index) => (
                   <Column
                     key={`${experience.company}-${experience.role}-${index}`}
@@ -223,7 +270,7 @@ export default function About() {
                       fillWidth
                       horizontal="space-between"
                       vertical="end"
-                      marginBottom="4"
+                      marginBottom="2"
                     >
                       <Text id={experience.company} variant="heading-strong-l">
                         {experience.company}
@@ -238,11 +285,11 @@ export default function About() {
                     <Text
                       variant="body-default-s"
                       onBackground="brand-weak"
-                      marginBottom="m"
+                      marginBottom="xs"
                     >
                       {experience.role}
                     </Text>
-                    <Column as="ul" gap="16">
+                    <Column as="ul" gap="4" style={{ textAlign: "justify" }}>
                       {experience.achievements.map(
                         (achievement: JSX.Element, index: number) => (
                           <Text
