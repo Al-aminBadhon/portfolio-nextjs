@@ -10,6 +10,8 @@ import {
   Tag,
   Text,
 } from "@/once-ui/components";
+
+import { SkillCard } from "@/components/about/SkillCard";
 import { baseURL } from "@/app/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
@@ -376,6 +378,22 @@ export default function About() {
               >
                 {about.technical.title}
               </Heading>
+
+              <Flex fillWidth gap="xl" direction="column">
+                {/* Programming Languages */}
+                <Column gap="m">
+                  <Text variant="heading-strong-l">Programming Languages</Text>
+                  <Flex gap="xs" wrap>
+                    <SkillCard icon={""} name="JavaScript" />
+                    <SkillCard icon={""} name="TypeScript" />
+                    <SkillCard icon={""} name="React" />
+                    <SkillCard icon={""} name="next.js" />
+                    <SkillCard icon={""} name="TypeScript" />
+                    <SkillCard icon={""} name="TypeScript" />
+                  </Flex>
+                </Column>
+              </Flex>
+
               <Column fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (
                   <Column key={`${skill}-${index}`} fillWidth gap="4">

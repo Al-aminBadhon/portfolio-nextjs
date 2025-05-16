@@ -100,8 +100,8 @@ const about = {
     experiences: [
       {
         company: "RAnLab - Research Analytic Lab",
-        timeframe: "Aug 2024 - Apr 2025",
-        role: "Senior Design Engineer",
+        timeframe: "Aug 24 - Apr 25",
+        role: "Full-stack Engineer",
         location: "St. John's, NL",
         achievements: [
           <>
@@ -126,8 +126,8 @@ PHP/Laravel for a 100+ client portal, ensuring secure data handling and scalable
       },
       {
         company: "Marine Learning System",
-        timeframe: "Dec 2023 - Jan 2024",
-        role: "- Software Developer",
+        timeframe: "Dec 23 - Jan 24",
+        role: "Software Developer",
         location: "Vancouver, BC",
         achievements: [
           <>
@@ -143,7 +143,7 @@ reducing manual intervention.
       },
       {
         company: "Banglalink Digital",
-        timeframe: " May 2023 - Aug 2023",
+        timeframe: " May 23 - Aug 23",
         role: ".NET Developer",
         achievements: [
           <>
@@ -162,7 +162,7 @@ zero-downtime updates in production environments.
       },
       {
         company: "Leads Corporation",
-        timeframe: "Jul 2022 - Apr 2023",
+        timeframe: "Jul 22 - Apr 23",
         role: "Full-Stack Software Engineer",
         location: "Dhaka, Bangladesh",
         achievements: [
@@ -174,22 +174,6 @@ monthly transactions for Southeast Asian banks.
            Led 6 developers using Azure DevOps (Boards, Repos, Pipelines) to achieve 100% on-time delivery for 4
 releases. Improved code quality by 30% via CI/CD automation (unit testing), implemented JWT/Oracle
 for security/scalability, and streamlined Scrum workflows
-          </>,
-        ],
-        images: [],
-      },
-      {
-        company: "Marine Learning System",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
           </>,
         ],
         images: [],

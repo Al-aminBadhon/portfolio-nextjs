@@ -1,0 +1,30 @@
+/* skillCard.module.css */
+.skillCard {
+  min-width: 80px; /* Ultra compact */
+  background: white;
+  border: 2px solid #000; /* Solid black */
+  cursor: default;
+  transition: all 0.15s ease;
+}
+
+.skillCard:hover {
+  background: #f8f8f8; /* Light hover */
+}
+
+.logo {
+  filter: contrast(1.1); /* Enhance logo clarity */
+}
+
+.skillName {
+  font-size: 0.7rem; /* Very small text */
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Grid container suggestion */
+.skillsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 8px;
+}
