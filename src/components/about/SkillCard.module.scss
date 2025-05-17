@@ -1,14 +1,33 @@
 /* skillCard.module.css */
-.skillCard {
-  min-width: 80px; /* Ultra compact */
-  background: white;
-  border: 2px solid #000; /* Solid black */
-  cursor: default;
-  transition: all 0.15s ease;
-}
+// .skillCard {
+//   min-width: 80px; /* Ultra compact */
+//   background: white;
+//   border: 2px solid #000; /* Solid black */
+//   cursor: default;
+//   transition: all 0.15s ease;
+// }
 
-.skillCard:hover {
-  background: #f8f8f8; /* Light hover */
+// .skillCard:hover {
+//   background: #f8f8f8; /* Light hover */
+//   transform: translateY(-2px);
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//   background: var(--color-brand-alpha-weak);
+// }
+
+.skillCard {
+  transition: all 0.2s ease;
+  cursor: default;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: var(--color-brand-alpha-weak);
+    
+    svg {
+      transform: scale(1.1);
+      transition: transform 0.2s ease;
+    }
+  }
 }
 
 .logo {
@@ -28,3 +47,4 @@
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   gap: 8px;
 }
+

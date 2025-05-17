@@ -379,20 +379,7 @@ export default function About() {
                 {about.technical.title}
               </Heading>
 
-              <Flex fillWidth gap="xl" direction="column">
-                {/* Programming Languages */}
-                <Column gap="m">
-                  <Text variant="heading-strong-l">Programming Languages</Text>
-                  <Flex gap="xs" wrap>
-                    <SkillCard icon={""} name="JavaScript" />
-                    <SkillCard icon={""} name="TypeScript" />
-                    <SkillCard icon={""} name="React" />
-                    <SkillCard icon={""} name="next.js" />
-                    <SkillCard icon={""} name="TypeScript" />
-                    <SkillCard icon={""} name="TypeScript" />
-                  </Flex>
-                </Column>
-              </Flex>
+              <SkillCard icon={""} name="JavaScript" />
 
               <Column fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (
