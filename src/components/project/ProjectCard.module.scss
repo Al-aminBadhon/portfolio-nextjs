@@ -1,0 +1,12 @@
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-m);
+  }
+}
+
+.container {
+  padding: var(--static-space-xl) 0;
+}

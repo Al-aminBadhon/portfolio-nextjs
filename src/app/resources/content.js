@@ -195,35 +195,42 @@ for security/scalability, and streamlined Scrum workflows
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        category: 'Front-End',
+         technologies: [
+          { name: 'JavaScript', icon: 'JavaScript.svg' },
+          { name: 'TypeScript', icon: 'TypeScript.svg' },
+          { name: 'ReactJs', icon: 'React.svg' },
+          { name: 'NextJs', icon: 'Next.js.svg' },
+        ],
+        
+      },
+      {
+        category: 'Back-End',
+         technologies: [
+          { name: 'Java', icon: 'Java.svg' },
+          { name: 'c#', icon: 'cSharp.svg' },
+          { name: '.Net', icon: 'dotnet.svg' },
+          { name: 'Java', icon: 'Java.svg' },
+        ],
+        
+      },
+      {
+        category: 'DevOps & Tools',
+        technologies: [
+          { name: 'Docker', icon: 'Docker.svg' },
+          { name: 'Kubernetes', icon: 'Kubernetes.svg' },
+          { name: 'Git', icon: 'Git.svg' },
+          { name: 'Vercel', icon: 'Vercel.svg' },
+          { name: 'Jenkins', icon: 'Jenkins.svg' },
+          { name: 'GitHub Actions', icon: 'GitHub-Actions.svg' },
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        category: 'Cloud & Infrastructure',
+        technologies: [
+          { name: 'AWS', icon: 'AWS.svg' },
+          { name: 'Azure', icon: 'Azure.png' }, // Added Google Cloud for cloud diversity.
+          { name: 'Terraform', icon: 'HashiCorp-Terraform.svg' },
         ],
       },
     ],
@@ -247,6 +254,25 @@ const work = {
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
+const projects =  [
+  {
+    id: "1",
+    title: "Portfolio Website",
+    description: "A modern Next.js portfolio with responsive design and CMS integration.",
+    technologies: ["Next.js", "TypeScript", "SCSS"],
+    githubUrl: "https://github.com/yourusername/portfolio",
+    demoUrl: "https://yourportfolio.com",
+    imageUrl: "/projects/portfolio-screenshot.jpg"
+  },
+  {
+    id: "2",
+    title: "E-Commerce App",
+    description: "Full-stack e-commerce platform with payment integration.",
+    technologies: ["React", "Node.js", "MongoDB"],
+    githubUrl: "https://github.com/yourusername/ecommerce",
+    imageUrl: "/projects/ecommerce-screenshot.jpg"
+  }
+];
 
 const gallery = {
   path: "/gallery",
@@ -299,4 +325,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, projects };
