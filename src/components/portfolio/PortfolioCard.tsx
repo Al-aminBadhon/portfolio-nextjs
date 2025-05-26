@@ -23,6 +23,7 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
       padding="m"
       data-border="rounded"
       data-shadow="m"
+      style={{ backgroundColor: "#fcfcfc" }}
     >
       {/* Project Image */}
       {project.image && (
@@ -45,7 +46,17 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
       {/* Technologies */}
       <Flex wrap gap="xs">
         {project.technologies.map((tech) => (
-          <Tag key={tech} label={tech} variant="neutral" size="m" />
+          <Tag
+            style={{
+              borderRadius: "7px",
+              backgroundColor: "#f4f7f8",
+              fontStyle: "italic",
+            }}
+            key={tech}
+            label={tech}
+            variant="neutral"
+            size="m"
+          />
         ))}
       </Flex>
 

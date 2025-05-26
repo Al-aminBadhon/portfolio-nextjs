@@ -275,6 +275,9 @@ const projects =  [
     imageUrl: "/projects/ecommerce-screenshot.jpg"
   }
 ];
+const contact={
+  label: "Contact"
+}
 export const portfolio = {
   title: "My Projects",
   label: "Portfolio",
@@ -356,4 +359,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery, projects };
+export { person, social, newsletter, home, about, blog, work, gallery, projects, contact };

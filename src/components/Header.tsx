@@ -14,6 +14,7 @@ import {
   work,
   gallery,
   portfolio,
+  contact,
 } from "@/app/resources/content";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -58,7 +59,7 @@ export const Header = () => {
 
   return (
     <>
-      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
+      <Fade hide="s" fillWidth position="fixed" height="40" zIndex={9} />
       <Fade
         show="s"
         fillWidth
@@ -89,27 +90,30 @@ export const Header = () => {
           <Flex
             background="surface"
             border="neutral-alpha-medium"
-            radius="m-4"
+            // radius="m-4"
             shadow="l"
-            padding="8"
+            padding="4"
             horizontal="center"
             zIndex={1}
+            style={{ borderRadius: "15px" }}
           >
             <Flex gap="8" vertical="center" textVariant="body-default-xl">
-              {routes["/"] && (
+              {/* {routes["/"] && (
                 <ToggleButton
                   prefixIcon="home"
                   href="/"
                   selected={pathname === "/"}
                 />
               )}
-              <Line background="neutral-alpha-medium" vert maxHeight="32" />
+              <Line background="neutral-alpha-medium" vert maxHeight="32" /> */}
               {routes["/about"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="person"
                     href="/about"
+                    size="l"
+                    style={{ borderRadius: "10px" }}
                     label={about.label}
                     selected={pathname === "/about"}
                   />
@@ -117,11 +121,14 @@ export const Header = () => {
                     className="s-flex-show"
                     prefixIcon="person"
                     href="/about"
+                    size="l"
+                    style={{ borderRadius: "10px" }}
                     selected={pathname === "/about"}
                   />
                 </>
               )}
-              {routes["/work"] && (
+              <Line background="neutral-alpha-medium" vert maxHeight="32" />
+              {/* {routes["/work"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
@@ -137,25 +144,51 @@ export const Header = () => {
                     selected={pathname.startsWith("/work")}
                   />
                 </>
-              )}
+              )} */}
               {routes["/portfolio"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="grid"
                     href="/portfolio"
+                    size="l"
                     label={portfolio.label}
+                    style={{ borderRadius: "10px" }}
                     selected={pathname.startsWith("/portfolio")}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="grid"
                     href="/portfolio"
+                    size="l"
+                    style={{ borderRadius: "10px" }}
                     selected={pathname.startsWith("/portfolio")}
                   />
                 </>
               )}
-              {routes["/blog"] && (
+              <Line background="neutral-alpha-medium" vert maxHeight="32" />
+              {routes["/contact"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="book"
+                    href="/contact"
+                    size="l"
+                    label={contact.label}
+                    style={{ borderRadius: "10px" }}
+                    selected={pathname.startsWith("/contact")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="book"
+                    href="/contact"
+                    size="l"
+                    style={{ borderRadius: "10px" }}
+                    selected={pathname.startsWith("/contact")}
+                  />
+                </>
+              )}
+              {/* {routes["/blog"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
@@ -171,8 +204,8 @@ export const Header = () => {
                     selected={pathname.startsWith("/blog")}
                   />
                 </>
-              )}
-              {routes["/gallery"] && (
+              )} */}
+              {/* {routes["/gallery"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
@@ -188,7 +221,7 @@ export const Header = () => {
                     selected={pathname.startsWith("/gallery")}
                   />
                 </>
-              )}
+              )} */}
               {display.themeSwitcher && (
                 <>
                   <Line background="neutral-alpha-medium" vert maxHeight="24" />

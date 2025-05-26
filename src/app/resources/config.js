@@ -8,6 +8,8 @@ const routes = {
   "/work": true,
   "/blog": true,
   "/gallery": true,
+  "/blog": true,
+  "/contact": true,
 };
 
 // Enable password protection on selected routes
@@ -70,7 +72,7 @@ const effects = {
     colorEnd: "page-background",
   },
   dots: {
-    display: true,
+    display: false,
     opacity: 40,
     size: "2",
     color: "brand-background-strong",

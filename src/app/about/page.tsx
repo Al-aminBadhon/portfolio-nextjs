@@ -51,7 +51,7 @@ export default function About() {
             <Text
               className={styles.textAlign}
               variant="code-default-l"
-              onBackground="neutral-weak"
+              onBackground="neutral-strong"
             >
               {person.role}
             </Text>
@@ -77,7 +77,11 @@ export default function About() {
                           prefixIcon={item.icon}
                           label={item.name}
                           size="s"
-                          variant="secondary"
+                          style={{
+                            borderRadius: "10px",
+                            borderColor: "gray",
+                          }}
+                          variant="tertiary"
                         />
                         <IconButton
                           className="s-flex-show"
@@ -85,7 +89,8 @@ export default function About() {
                           key={`${item.name}-icon`}
                           href={item.link}
                           icon={item.icon}
-                          variant="secondary"
+                          style={{ borderRadius: "10px", borderColor: "gray" }}
+                          variant="tertiary"
                         />
                       </React.Fragment>
                     )
@@ -115,7 +120,7 @@ export default function About() {
                   backdropFilter: "blur(var(--static-space-1))",
                 }}
                 background="brand-alpha-weak"
-                radius="full"
+                radius="s-4"
                 padding="4"
                 gap="8"
                 marginBottom="m"
