@@ -212,27 +212,38 @@ export default function About() {
               <Heading
                 as="h2"
                 id={about.studies.title}
-                variant="display-strong-s"
+                variant="display-strong-xs"
                 marginBottom="m"
               >
                 {about.studies.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+              <Column fillWidth gap="l" marginBottom="20">
                 {about.studies.institutions.map((institution, index) => (
                   <Column
                     key={`${institution.name}-${index}`}
                     fillWidth
                     gap="4"
                   >
-                    <Text id={institution.name} variant="heading-strong-l">
-                      {institution.name}
-                    </Text>
-                    <Text
-                      variant="heading-default-xs"
-                      onBackground="neutral-weak"
-                    >
-                      {institution.description}
-                    </Text>
+                    <Flex fillWidth horizontal="space-between">
+                      <Text id={institution.name} variant="heading-strong-l">
+                        {institution.name}
+                      </Text>
+                      <Text>{institution.Duration}</Text>
+                    </Flex>
+                    <Flex fillWidth horizontal="space-between">
+                      <Text
+                        variant="heading-default-xs"
+                        onBackground="neutral-weak"
+                      >
+                        {institution.description}
+                      </Text>
+                      <Text
+                        variant="heading-default-xs"
+                        onBackground="neutral-weak"
+                      >
+                        {institution.cgpa}
+                      </Text>
+                    </Flex>
                   </Column>
                 ))}
               </Column>
@@ -244,8 +255,8 @@ export default function About() {
               <Heading
                 as="h2"
                 id={about.technical.title}
-                variant="display-strong-s"
-                marginBottom="40"
+                variant="display-strong-xs"
+                marginBottom="20"
               >
                 {about.technical.title}
               </Heading>

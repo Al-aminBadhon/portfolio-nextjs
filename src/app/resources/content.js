@@ -182,11 +182,13 @@ for security/scalability, and streamlined Scrum workflows
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
         name: "Memorial University of Newfoundland",
-        description: <>MASc in Software Engineering</>,
+        description: "MASc in Software Engineering",
+        cgpa: "3.72/4",
+        Duration: "Sep 23- Apr 25"
       }      
     ],
   },
@@ -208,7 +210,7 @@ for security/scalability, and streamlined Scrum workflows
         category: 'Back-End',
          technologies: [
           { name: 'Java', icon: 'Java.svg' },
-          { name: 'c#', icon: 'cSharp.svg' },
+          { name: 'C#', icon: 'cSharp.svg' },
           { name: '.Net', icon: 'dotnet.svg' },
           { name: 'Java', icon: 'Java.svg' },
         ],
@@ -273,6 +275,35 @@ const projects =  [
     imageUrl: "/projects/ecommerce-screenshot.jpg"
   }
 ];
+export const portfolio = {
+  title: "My Projects",
+  label: "Portfolio",
+  description: "A collection of my work showcasing various technologies and solutions.",
+  path: "/portfolio",
+  projects: [
+    {
+      id: "project-1",
+      title: "E-commerce Platform",
+      shortDescription: "A full-featured online store with payment integration and inventory management.",
+      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      demoUrl: "https://demo.example.com",
+      sourceUrl: "https://github.com/username/ecommerce",
+      featured: true,
+      image: "/images/portfolio/portfolio-1.png"
+    },
+    {
+      id: "project-2",
+      title: "Task Management App",
+      shortDescription: "A productivity application for organizing tasks with team collaboration features.",
+      technologies: ["React", "Firebase", "TypeScript"],
+      demoUrl: "https://tasks.example.com",
+      sourceUrl: "https://github.com/username/task-app",
+      image: "/images/projects/project-01/cover-04.jpg"
+    },
+    // Add more projects as needed
+  ]
+};
+
 
 const gallery = {
   path: "/gallery",
