@@ -13,8 +13,10 @@
     "@icons-pack/react-simple-icons": "^12.8.0",
     "@mdx-js/loader": "^3.1.0",
     "@next/mdx": "^15.3.1",
+    "@splinetool/react-spline": "^4.1.0",
     "classnames": "^2.5.1",
     "cookie": "^1.0.2",
+    "framer-motion": "^13.4.0",
     "gray-matter": "^4.0.3",
     "next": "^15.3.1",
     "next-mdx-remote": "^5.0.0",
@@ -32,6 +34,7 @@
   },
   "devDependencies": {
     "@csstools/postcss-global-data": "^2.1.1",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/cookie": "^0.6.0",
     "@types/node": "^20.17.30",
     "@types/react": "^18.3.20",

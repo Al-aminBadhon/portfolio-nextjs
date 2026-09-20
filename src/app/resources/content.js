@@ -289,6 +289,7 @@ export const portfolio = {
       title: "E-commerce Platform",
       shortDescription: "A full-featured online store with payment integration and inventory management.",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      version: "v4.2.0",
       demoUrl: "https://demo.example.com",
       sourceUrl: "https://github.com/username/ecommerce",
       featured: true,
@@ -299,6 +300,7 @@ export const portfolio = {
       title: "Task Management App",
       shortDescription: "A productivity application for organizing tasks with team collaboration features.",
       technologies: ["React", "Firebase", "TypeScript"],
+      version: "v2.1.0",
       demoUrl: "https://tasks.example.com",
       sourceUrl: "https://github.com/username/task-app",
       image: "/images/projects/project-01/cover-04.jpg"

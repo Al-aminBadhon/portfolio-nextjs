@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --apple-bg: #ffffff;
+  --apple-ink: #000000;
+  --apple-graphite: #1d1d1f;
+  --apple-aluminum: #f5f5f7;
+  --apple-border: #e8e8ed;
+  --apple-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --apple-nav-h: 3.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--apple-bg);
+  color: var(--apple-graphite);
+  font-family: var(--font-apple), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.apple-section {
+  scroll-margin-top: calc(var(--apple-nav-h) + 1.5rem);
+}
+
+/* Focus rings for interactive elements */
+.apple-focus:focus-visible {
+  outline: 2px solid var(--apple-ink);
+  outline-offset: 3px;
+}
