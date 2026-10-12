@@ -1,36 +1,25 @@
-import { Column } from "@/once-ui/components";
-import { baseURL } from "@/app/resources";
-import { about, person, work } from "@/app/resources/content";
-import { Meta, Schema } from "@/once-ui/modules";
-import { Projects } from "@/components/work/Projects";
+import { Suspense } from "react";
+import { Section } from "@/components/ui/Section";
+import { ProjectFilter } from "@/components/work/ProjectFilter";
+import { projects } from "@/data/projects";
+import { buildMetadata } from "@/lib/seo";
 
-export async function generateMetadata() {
-  return Meta.generate({
-    title: work.title,
-    description: work.description,
-    baseURL: baseURL,
-    image: `${baseURL}/og?title=${encodeURIComponent(work.title)}`,
-    path: work.path,
-  });
-}
+export const metadata = buildMetadata({
+  title: "Work",
+  description: "Selected products, platforms, and tools by B M AL-amin Badhon.",
+  path: "/work",
+});
 
-export default function Work() {
+export default function WorkPage() {
   return (
-    <Column maxWidth="m">
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        path={work.path}
-        title={work.title}
-        description={work.description}
-        image={`${baseURL}/og?title=${encodeURIComponent(work.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
-        }}
-      />
-      <Projects />
-    </Column>
+    <Section
+      eyebrow="Work"
+      title="Selected projects."
+      description="Filter by category. Each case study covers the problem, contribution, stack, and outcome."
+    >
+      <Suspense fallback={<p className="text-sm text-muted">Loading projects…</p>}>
+        <ProjectFilter projects={projects} />
+      </Suspense>
+    </Section>
   );
 }

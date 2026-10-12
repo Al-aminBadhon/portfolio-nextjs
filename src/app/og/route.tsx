@@ -1,111 +1,62 @@
 import { ImageResponse } from "next/og";
-import { baseURL } from "@/app/resources";
-import { person } from "@/app/resources/content";
+import { readFile } from "fs/promises";
+import path from "path";
+import { profile } from "@/data/profile";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function GET(request: Request) {
-  let url = new URL(request.url);
-  let title = url.searchParams.get("title") || "Portfolio";
-  /*
-  const font = fetch(new URL("../../../public/fonts/Inter.ttf", import.meta.url)).then((res) =>
-    res.arrayBuffer(),
-  );
-  const fontData = await font;
-  */
+  const { searchParams } = new URL(request.url);
+  const title = searchParams.get("title") || profile.name;
+  const fontData = await readFile(path.join(process.cwd(), "public/fonts/Inter.ttf"));
 
   return new ImageResponse(
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        padding: "8rem",
-        background: "#151515",
-      }}
-    >
+    (
       <div
         style={{
           display: "flex",
+          width: "100%",
+          height: "100%",
+          background: "#f7f7f8",
+          padding: "72px",
           flexDirection: "column",
-          justifyContent: "center",
-          gap: "4rem",
-          fontFamily: "Inter",
-          fontStyle: "normal",
-          color: "white",
+          justifyContent: "space-between",
+          backgroundImage: "radial-gradient(circle, #c8c8ce 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
         }}
       >
-        <span
-          style={{
-            fontSize: "8rem",
-            lineHeight: "8rem",
-            letterSpacing: "-0.05em",
-            whiteSpace: "pre-wrap",
-            textWrap: "balance",
-          }}
-        >
-          {title}
-        </span>
         <div
           style={{
             display: "flex",
-            alignItems: "center",
-            gap: "5rem",
+            fontSize: 22,
+            color: "#52525b",
+            letterSpacing: "-0.02em",
           }}
         >
-          <img
-            src={baseURL + person.avatar}
-            style={{
-              width: "12rem",
-              height: "12rem",
-              objectFit: "cover",
-              borderRadius: "100%",
-            }}
-          />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.75rem",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "4.5rem",
-                lineHeight: "4.5rem",
-                whiteSpace: "pre-wrap",
-                textWrap: "balance",
-              }}
-            >
-              {person.name}
-            </span>
-            <span
-              style={{
-                fontSize: "2.5rem",
-                lineHeight: "2.5rem",
-                whiteSpace: "pre-wrap",
-                textWrap: "balance",
-                opacity: "0.6",
-              }}
-            >
-              {person.role}
-            </span>
-          </div>
+          {profile.role}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            fontSize: 72,
+            lineHeight: 1.05,
+            fontWeight: 600,
+            color: "#0a0a0b",
+            letterSpacing: "-0.04em",
+            maxWidth: 980,
+          }}
+        >
+          {title}
+        </div>
+        <div style={{ display: "flex", color: "#52525b", fontSize: 24 }}>
+          {profile.name}
         </div>
       </div>
-    </div>,
+    ),
     {
-      width: 1280,
-      height: 720,
-      /*
-      fonts: [
-        {
-          name: "Inter",
-          data: fontData,
-          style: "normal",
-        },
-      ],
-      */
+      width: 1200,
+      height: 630,
+      fonts: [{ name: "Inter", data: fontData, style: "normal" }],
     },
   );
 }

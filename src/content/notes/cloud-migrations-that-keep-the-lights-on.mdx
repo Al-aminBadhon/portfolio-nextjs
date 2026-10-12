@@ -1,0 +1,22 @@
+---
+title: Cloud migrations that keep the lights on
+summary: Practical notes from a Google Cloud to AWS move — containerization, cost levers, and the boring discipline of zero-downtime cutovers.
+publishedAt: 2025-01-18
+tags: [aws, devops, migration]
+---
+
+Cloud migrations succeed when the cutover is boring.
+
+The exciting work happens earlier: inventorying services, containerizing workloads, validating autoscaling, and rehearsing rollback until it feels routine.
+
+## Inventory before ambition
+
+List every dependency that can surprise you: scheduled jobs, object storage paths, secrets, DNS TTLs, and monitoring gaps. Migrations fail on the forgotten glue.
+
+## Optimize after stability
+
+Cost savings from Docker and autoscaling are real, but chasing them mid-cutover is how you invent outages. Stabilize first, then turn the knobs.
+
+## Treat CI/CD as the migration vehicle
+
+If deploys are manual, the migration will be manual forever. Automate the path you will walk during cutover, then walk it repeatedly in staging.

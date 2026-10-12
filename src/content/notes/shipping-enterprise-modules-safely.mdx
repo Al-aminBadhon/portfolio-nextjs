@@ -1,0 +1,22 @@
+---
+title: Shipping enterprise modules safely
+summary: Lessons from releasing multi-office commerce modules without drama — architecture boundaries, CI gates, and mentorship habits that compound.
+publishedAt: 2025-06-12
+tags: [architecture, delivery, .NET]
+---
+
+Enterprise releases fail less often because of clever code and more often because of weak boundaries.
+
+When shipping modules across offices, I treat each surface as a contract: domain rules stay inside the module, infrastructure stays replaceable, and CI is the shared language for quality.
+
+## Start with the failure mode
+
+Before writing features, write down what must never break: auth, money movement, reporting lag, or deployment rollback. Those constraints decide which abstractions are worth the cost.
+
+## Keep CI boring
+
+A green pipeline should mean the same thing for every engineer: tests ran, migrations checked, containers built, and smoke paths verified. Clever one-off release scripts are where weekends go to die.
+
+## Mentorship is a delivery tool
+
+Walking juniors through domain-driven patterns early is slower for a sprint and faster for a quarter. Shared language reduces review thrash more than any linter rule.
