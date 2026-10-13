@@ -100,7 +100,7 @@ Production domain: `https://alaminbadhon.dev` (`src/data/site.ts`).
 4. Add environment variables (Production + Preview):
    - `CONTACT_TO_EMAIL=alamin.badhonn@gmail.com`
    - `RESEND_API_KEY` (from Resend)
-   - `CONTACT_FROM_EMAIL=Portfolio <onboarding@resend.dev>`
+   - `CONTACT_FROM_EMAIL=Portfolio <hello@alaminbadhon.dev>`
 5. Deploy, then in **Project → Settings → Domains** add `alaminbadhon.dev` (and `www` if you want) and follow DNS instructions from your registrar.
 6. Every push to `main` deploys production; PRs get Preview URLs.
 
